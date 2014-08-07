@@ -3,73 +3,56 @@ body{
 }
 div{
 	background-color: white;
-	border: 1px solid black; /* for positioning purpose only, will be removed*/
+	/*border: 1px solid black;  for positioning purpose only, will be removed*/
 }
 
 #main{
-	margin: 20px 350px 0px 350px;
+	margin: 20px 450px 0px 450px;
 	border-radius: 20px;
 
 }
 #header{
-	height: 100px;
-	border-radius: 20px;
-
+	padding-top: 15px;
+	height: 110px;
+	border-radius: 10px;
+	text-align: center;
+	font: 25px serif,arial;
+	color: #390874;
 	
 }
 
 #footer{
-	height: 140px;
+	height: 2	0px;
 	clear: both;
 	border-radius: 20px;
+
 }
 
-/*#main:nth-child()*/
-
-
-.doc div{
-	height: 200px;
-	
-    /*Firefox */
-    -moz-column-count: 2;
-    -moz-column-gap: 40px;
-    -moz-column-rule: 4px outset #ff00ff;
-
-     /*Safari and Chrome */
-    -webkit-column-count: 2;
-    -webkit-column-gap: 40px;
-    -webkit-column-rule: 4px outset #ff00ff;
-
-    column-count: 2;
-    column-gap: 40px;
-    column-rule: 4px outset #ff00ff;
-	
-}
-
-.doc{
-	width: 100%;
-	height:1400px;
+.left{
+	width: 26.5%;
+	float: left;
+	height: 220px;
 	position: relative;
-    }
-
-/*
-.doc{
-	width: 100%;
-	height:1400px;
-	position: relative;
-    
-    /*Firefox */
-    -moz-column-count: 2;
-    -moz-column-gap: 40px;
-    -moz-column-rule: 4px outset #ff00ff;
-
-     Safari and Chrome 
-    -webkit-column-count: 2;
-    -webkit-column-gap: 40px;
-    -webkit-column-rule: 4px outset #ff00ff;
-
-    column-count: 2;
-    column-gap: 40px;
-    column-rule: 4px outset #ff00ff;
+	display: inline-block;;
+	padding-left: 25px;
 }
-*/
+
+.left p{
+	font: 15px sans, arial;
+	color: #e83425;
+	text-align: center;
+}
+
+
+.right{
+	text-align: left;
+	float: right;
+	height: 220px;
+	width: 68%;
+	position: relative;
+	display: inline-block;
+}
+
+.right p{
+	font: 15px Georgia, arial;
+}
