@@ -1,0 +1,45 @@
+body{
+	background-color: #e3e2dd;
+}
+div{
+	background-color: white;
+	border: 1px solid black; /* for positioning purpose only, will be removed*/
+}
+
+#main{
+	margin: 20px 350px 0px 350px;
+	border-radius: 20px;
+
+}
+#header{
+	height: 100px;
+	border-radius: 20px;
+
+	
+}
+
+#footer{
+	height: 140px;
+	clear: both;
+	border-radius: 20px;
+
+
+
+}
+
+.left{
+	width: 23.6%;
+	float: left;
+	height: 1200px;
+	color: yellow;
+	position: relative;
+	display: inline-block;;
+}
+
+.right{
+	float: right;
+	height: 1200px;
+	width: 76%;
+	position: relative;
+	display: inline-block;
+}
