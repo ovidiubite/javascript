@@ -7,7 +7,7 @@ div{
 }
 
 #main{
-	margin: 20px 450px 0px 450px;
+	margin: 20px 450px 20px 450px;
 	border-radius: 20px;
 
 }
@@ -22,7 +22,7 @@ div{
 }
 
 #footer{
-	height: 2	0px;
+	height: 20px;
 	clear: both;
 	border-radius: 20px;
 
@@ -40,7 +40,7 @@ div{
 .left p{
 	font: 15px sans, arial;
 	color: #e83425;
-	text-align: center;
+	text-align: right;
 }
 
 
