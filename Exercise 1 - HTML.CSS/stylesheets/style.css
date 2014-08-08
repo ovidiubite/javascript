@@ -62,9 +62,10 @@ hr{
 }
 
 table{
-	width: 400px;
-	padding-left: 100px;
+	width: 300px;
+	padding-left: 10px;
 	text-align: center;
+	font: 15px Georgia, arial;
 }
 table thead{
 	color: #0061ff;
@@ -73,4 +74,15 @@ table thead{
 
 .calif{
 	color: #db1a3d;
+}
+
+img{
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	padding-right: 140px;
+}
+
+#quote{
+	font-style: italic;
 }
