@@ -3,7 +3,7 @@ body{
 }
 div{
 	background-color: white;
-	/*border: 1px solid black;  /*for positioning purpose only, will be removed*/
+	/*border: 1px solid black;  for positioning purpose only, will be removed*/
 }
 
 #main{
@@ -85,4 +85,40 @@ img{
 
 #quote{
 	font-style: italic;
+}
+
+#first_col, #sec_col, #th_col{
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	width: 185.5px;
+}
+
+.prog_bar{
+	width: 185.5px;
+	height: 18px;
+	border-radius: 4px;
+	background-color: #ffe819;
+	border: 1px solid #8da8a4;
+}
+
+#bar1{
+	height: 18px;
+	width: 110px;
+	background-color: #1adb34;
+	border-radius: 2px;
+}
+
+#bar2{
+	height: 18px;
+	width: 140px;
+	background-color: #1adb34;
+	border-radius: 2px;
+}
+
+#bar3{
+	height: 18px;
+	width: 67px;
+	background-color: #1adb34;
+	border-radius: 2px;
 }
