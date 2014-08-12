@@ -87,7 +87,7 @@ img{
 	font-style: italic;
 }
 
-#first_col, #sec_col, #th_col{
+#col{
 	padding-left: 10px;
 	padding-right: 10px;
 	float: left;
