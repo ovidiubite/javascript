@@ -2,9 +2,19 @@
 	background-color: blue;
 	height: 100px;
 	width: 100px;
+	position: relative;
+
+	
+}
+
+#screen{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -50px;
-	margin-left: -50px;
+	height: 400px;
+	width: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	background-color: #b0cdcb;
+	/*border: 1px solid black;*/
 }
