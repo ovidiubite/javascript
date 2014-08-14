@@ -1,19 +1,38 @@
-#square{
+.square{
 	background-color: #f68d2e;
 	height: 102px;
 	width: 102px;
 	position: relative;
 	border: 2px solid #fe9448;
+
 }
 
 #screen{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	height: 406px;
-	width: 406px;
-	margin-top: -200px;
-	margin-left: -200px;
+	height: 424px;
+	width: 424px;
+	margin-top: -212px;
+	margin-left: -212px;
 	background-color: #c1cdba;
-	border: 3px solid #c1cdba;
+	border: 8px solid #c1cdba;
 }
+
+/*#rows{
+	height: 102px;
+	width: 420px;
+	border: 2px solid green;
+	background-color: black;
+	display: block;
+	position: relative;
+}
+
+#cells{
+	background-color: white;
+	height: 102px;
+	width: 102px;
+	border: 2px solid green;
+	position: absolute;
+	display: block;
+}*/
