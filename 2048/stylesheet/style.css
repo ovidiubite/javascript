@@ -7,7 +7,7 @@
 
 }
 
-#screen{
+/*#screen{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -18,6 +18,7 @@
 	background-color: #c1cdba;
 	border: 8px solid #c1cdba;
 }
+*/
 
 /*#rows{
 	height: 102px;
@@ -26,13 +27,13 @@
 	background-color: black;
 	display: block;
 	position: relative;
-}
+}*/
 
-#cells{
+.empty_cell{
 	background-color: white;
 	height: 102px;
 	width: 102px;
 	border: 2px solid green;
-	position: absolute;
-	display: block;
-}*/
+	position: relative;
+	float: left;
+}
