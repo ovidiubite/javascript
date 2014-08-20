@@ -66,49 +66,155 @@ var move = function(matrix1, direction){
       case 'startGame':
           startGame();
           break;
-        
       case 'left':
-          for( var i = 0; i < size; i++){
-            for( var j = size-1; j > 0; j--){
-            // console.log(i + '-' +j +'--------------------------');
-            // console.log(matrix1[i][j]);
-              if(matrix[i][j].value !== 0){           
-                if(matrix1[i][j].value === matrix1[i][j-1].value && matrix1[i][j].flag === 0 && matrix1[i][j-1].flag === 0){
-                  matrix1[i][j-1].value = matrix1[i][j-1].value*2;
-                  matrix1[i][j].value = 0;
-                  matrix1[i][j-1].flag = 1;
-                  console.log('am intrat in if');
-                }
-              else if(matrix1[i][j-1].value === 0){
-                  matrix1[i][j-1] = matrix1[i][j];
-                  matrix1[i][j] = new Tile(i,j,0);
-                  console.log('am intrat in else');
-                }
+            for( var i = 0; i < size; i++){
+              for( var j = size-1; j > 0; j--){
+                if(matrix1[i][j].value !== 0){           
+                  if(matrix1[i][j].value === matrix1[i][j-1].value && matrix1[i][j].flag === 0 && matrix1[i][j-1].flag === 0){
+                    matrix1[i][j-1].value = matrix1[i][j-1].value*2;
+                    matrix1[i][j].value = 0;
+                    matrix1[i][j-1].flag = 1;
+                    console.log('am intrat in if');
+                  }
+                  else if(matrix1[i][j-1].value === 0){
+                    matrix1[i][j-1] = matrix1[i][j];
+                    matrix1[i][j] = new Tile(i,j,0);
+                    console.log('am intrat in else');
+                    }
                 else if(matrix1[i][j-1].value !== 0) continue;
                   console.log('nu am intrat');
               }
             }
           }
+           // parcurg pentru a scapa de spatiile goale ( VALUE = 0)
+           for( var i = 0; i < size; i++)
+             for( var j = 0; j < size-1; j++)
+               if(matrix1[i][j+1].value !== 0 && matrix1[i][j].value === 0){
+                matrix1[i][j] = matrix1[i][j+1];
+                matrix1[i][j+1] = new Tile(i,j,0);
+                  if(matrix1[i][j-1] && matrix1[i][j-1].value === 0){
+                    matrix1[i][j-1] = matrix1[i][j];
+                    matrix1[i][j] = new Tile(i,j,0);
+                  }
+                  console.log('verific');
+                }
+         
         insertTile(matrix1);
        break;
-      // case 'right':
-      //     for (var i = 0; i < size; i++){
-      //       for (var j = 0; i < .length; i++) {
-             
-      //       };
-            
-      //     };
-      //     break;
+       case 'right':
+          for( var i = 0; i < size; i++){
+            for( var j = 0; j < size-1; j++){
+              if(matrix1[i][j].value !== 0){           
+                if(matrix1[i][j].value === matrix1[i][j+1].value && matrix1[i][j].flag === 0 && matrix1[i][j+1].flag === 0){
+                  matrix1[i][j+1].value = matrix1[i][j+1].value*2;
+                  matrix1[i][j].value = 0;
+                  matrix1[i][j+1].flag = 1;
+                  console.log('am intrat in if');
+                }
+              else if(matrix1[i][j+1].value === 0){
+                  matrix1[i][j+1] = matrix1[i][j];
+                  matrix1[i][j] = new Tile(i,j,0);
+                  console.log('am intrat in else');
+                }
+                else if(matrix1[i][j+1].value !== 0) continue;
+                  console.log('nu am intrat');
+              }
+            }
+           }
+           // parcurg pentru a scapa de spatiile goale ( VALUE = 0)
+           for( var i = 0; i < size; i++)
+             for( var j = size-1; j > 0 ; j--)
+              if(matrix1[i][j].value === 0 && matrix1[i][j-1].value !== 0){
+                  matrix1[i][j] = matrix1[i][j-1];
+                  matrix1[i][j-1] = new Tile(i,j,0);
+                  if(matrix1[i][j+1] && matrix1[i][j+1].value === 0){
+                    matrix1[i][j+1] = matrix1[i][j];
+                    matrix1[i][j] = new Tile(i,j,0);
+                  }
+                  console.log('verific');
+                }
+        insertTile(matrix1);
+        break;
+      case 'up':
+         for(var j = 0; j < size; j++){
+           for(var i = size-1; i > 0; i--){
+             console.log("ciclu infinit");
+             if(matrix1[i][j].value !== 0){ 
 
-     }
-return matrix1;
+               if(matrix1[i][j].value === matrix1[i-1][j].value && matrix1[i][j].flag === 0 && matrix1[i-1][j].flag === 0){
+                 matrix1[i-1][j].value = matrix1[i-1][j].value*2;
+                 matrix1[i][j].value = 0;
+                 matrix1[i-1][j].flag = 1;
+                 console.log('am intrat in if');
+                 }
+                 else if(matrix1[i-1][j].value === 0){
+                  matrix1[i-1][j] = matrix1[i][j];
+                  matrix1[i][j] = new Tile(i,j,0);
+                  console.log('am intrat in else');
+                  }
+                else if(matrix1[i-1][j].value !== 0) continue;
+                  console.log('nu am intrat');
+              }
+            }
+          }
+           // parcurg pentru a scapa de spatiile goale ( VALUE = 0)
+           for( var j = 0; j < size; j++)
+             for( var i = 0; i < size-1 ; i++)
+                if(matrix1[i+1][j].value !== 0 && matrix1[i][j].value === 0){
+                  matrix1[i][j] = matrix1[i+1][j];
+                  matrix1[i+1][j] = new Tile(i,j,0);
+                  if(matrix1[i-1][j] && matrix1[i-1][j].value === 0){
+                    matrix1[i-1][j] = matrix1[i][j];
+                    matrix1[i][j] = new Tile(i,j,0);
+                  }
+                  console.log('verific');
+                }
+        insertTile(matrix1);
+        break;
+      case 'down':
+        for(var j = 0; j < size; j++){
+           for(var i = 0; i < size-1; i++){
+             if(matrix1[i][j].value !== 0){ 
+               if(matrix1[i][j].value === matrix1[i+1][j].value && matrix1[i][j].flag === 0 && matrix1[i+1][j].flag === 0){
+                 matrix1[i+1][j].value = matrix1[i+1][j].value*2;
+                 matrix1[i][j].value = 0;
+                 matrix1[i+1][j].flag = 1;
+                 console.log('am intrat in if');
+                 }
+                 else if(matrix1[i+1][j].value === 0){
+                  matrix1[i+1][j] = matrix1[i][j];
+                  matrix1[i][j] = new Tile(i,j,0);
+                  console.log('am intrat in else');
+                  }
+                else if(matrix1[i+1][j].value !== 0) continue;
+                  console.log('nu am intrat');
+              }
+            }
+          }
+           // parcurg pentru a scapa de spatiile goale ( VALUE = 0)
+           for( var j = 0; j < size; j++)
+             for( var i = size-1; i > 0 ; i--)
+                if(matrix1[i][j].value === 0 && matrix1[i-1][j].value !== 0){
+                  matrix1[i][j] = matrix1[i-1][j];
+                  matrix1[i-1][j] = new Tile(i,j,0);
+                  if(matrix1[i+1][j] && matrix1[i+1][j].value === 0){
+                    matrix1[i+1][j] = matrix1[i][j];
+                    matrix1[i][j] = new Tile(i,j,0);
+                  }
+                  console.log('verific');
+                }
+        insertTile(matrix1);
+        break;
+
+      };
+  return matrix1;
 };
 
 var draw = function(matrix){
     $('#screen').empty();
   for(i = 0; i < size; i++){
     for(j = 0; j < size; j++)
-      $('#screen').append('<p style="float:left; margin:0; padding:0;">'+matrix[i][j].value + "&nbsp &nbsp"+'</p>')
-    $('#screen').append('<br/>')
+      $('#screen').append('<p style="font:30px arial;float:left; margin:0; padding:0;">'+matrix[i][j].value + "&nbsp &nbsp"+'</p>')
+    $('#screen').append('<br/>').append('<br/>');
   }
 };
