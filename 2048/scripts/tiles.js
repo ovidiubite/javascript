@@ -9,5 +9,6 @@ var resetFlag = function(matrix){
 	for( var i = 0; i < size; i++)
 		for( var j = 0; j < size; j++)
 			matrix[i][j].flag = 0;
+		return matrix;
 };
 

@@ -15,7 +15,9 @@ $(document).ready(function(){
       // case 38:
       //   break;
       // // right Arrow 
-      // case 39:
+      case 39:
+      	Go('right');
+      	break;
       //   break;
       // // down Array 
       // case 40:
