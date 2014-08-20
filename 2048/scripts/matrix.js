@@ -32,7 +32,6 @@ var getEmptyCell = function(matrix1){
 
 var matrix = createMatrix();
 
-
 //initialize the game with 2 cells
 var startGame = function(){
   var emptCell = getEmptyCell(matrix);
