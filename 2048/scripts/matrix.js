@@ -56,51 +56,51 @@ var insertTile = function(matrix1){
 //     return 0;
 // };
 
+
 //for moves 
 var move = function(matrix1, direction){
   // $(document).ready(function(){
     resetFlag(matrix1);
-      switch(direction) {
+      switch(direction){
        // left Arrow
-      case 'left':
-        for( var i = 0; i < size; i++){
-          for( var j = size-1; j >= 0; j--){
-            // console.log(i + '-' +j +'--------------------------');
-            // console.log(matrix1[i][j]);
-          if(j>0 && matrix[i][j].value !== 0){           
-            if(matrix1[i][j].value === matrix1[i][j-1].value && matrix1[i][j].flag === 0 && matrix1[i][j-1].flag === 0){
-              matrix1[i][j-1].value = matrix1[i][j-1].value*2;
-              matrix1[i][j].value = 0;
-              matrix1[i][j].flag = 1;
-              console.log('am intrat in if');
-            }
-            else if(matrix1[i][j-1].value === 0){
-              matrix1[i][j-1] = matrix1[i][j];
-              matrix1[i][j] = new Tile(i,j,0);
-              console.log('am intrat in else');
-              }
-              else if(matrix1[i][j-1].value !== 0) continue;
-              console.log('nu am intrat');
-          }
-        }
-        }
-          insertTile(matrix1);
-          break;
-        case 'startGame':
+      case 'startGame':
           startGame();
           break;
-        }
-     
-      // // up Arrow 
-      // case 'up':
-      //   break;
-      // // right Arrow 
+        
+      case 'left':
+          for( var i = 0; i < size; i++){
+            for( var j = size-1; j > 0; j--){
+            // console.log(i + '-' +j +'--------------------------');
+            // console.log(matrix1[i][j]);
+              if(matrix[i][j].value !== 0){           
+                if(matrix1[i][j].value === matrix1[i][j-1].value && matrix1[i][j].flag === 0 && matrix1[i][j-1].flag === 0){
+                  matrix1[i][j-1].value = matrix1[i][j-1].value*2;
+                  matrix1[i][j].value = 0;
+                  matrix1[i][j-1].flag = 1;
+                  console.log('am intrat in if');
+                }
+              else if(matrix1[i][j-1].value === 0){
+                  matrix1[i][j-1] = matrix1[i][j];
+                  matrix1[i][j] = new Tile(i,j,0);
+                  console.log('am intrat in else');
+                }
+                else if(matrix1[i][j-1].value !== 0) continue;
+                  console.log('nu am intrat');
+              }
+            }
+          }
+        insertTile(matrix1);
+       break;
       // case 'right':
-      //   break;
-      // // down Array 
-      // case 'down':
-      //   break;
-  // });	
+      //     for (var i = 0; i < size; i++){
+      //       for (var j = 0; i < .length; i++) {
+             
+      //       };
+            
+      //     };
+      //     break;
+
+     }
 return matrix1;
 };
 
