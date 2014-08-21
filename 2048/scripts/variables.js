@@ -1,11 +1,9 @@
-var size = 4;
+const MATRIX_SIZE = 4; 
+const PERCENT = 0.9;
 var randNumber = function(){
-  var numbers = [2, 2, 2, 4];
-  return numbers[Math.floor(Math.random() * numbers.length)];
+  var value = Math.random() < PERCENT ? 2 : 4;
+  return value;
 };
 
-//returns a string 
-var randPosition = function(matr){
-  return matr[Math.floor(Math.random() * matr.length)];
-};
+
 

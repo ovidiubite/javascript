@@ -6,9 +6,10 @@ function Tile(x,y, value){
 };
 
 var resetFlag = function(matrix){
-	for( var i = 0; i < size; i++)
-		for( var j = 0; j < size; j++)
+	for( var i = 0; i < MATRIX_SIZE; i++)
+		for( var j = 0; j < MATRIX_SIZE; j++)
 			matrix[i][j].flag = 0;
 		return matrix;
 };
+
 
