@@ -206,10 +206,14 @@ var move = function(matrix1, direction){
 };
 
 var draw = function(matrix){
-    $('#screen').empty();
+    $('.container').empty();
   for(i = 0; i < MATRIX_SIZE; i++){
     for(j = 0; j < MATRIX_SIZE; j++)
-      $('#screen').append('<p style="font:30px arial;float:left; margin:0; padding:0;">'+matrix[i][j].value + "&nbsp &nbsp"+'</p>')
-    $('#screen').append('<br/>').append('<br/>');
+      if(matrix[i][j].value !== 0)
+        $('.container').append('<div class="tile val'+matrix[i][j].value+'">'+matrix[i][j].value+'</div>')
+      else
+        $('.container').append('<div class="tile val'+matrix[i][j].value+'"></div>')
+    $('.container').append('<br/>')
   }
 };
+

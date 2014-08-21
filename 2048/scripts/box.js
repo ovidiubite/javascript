@@ -1,5 +1,4 @@
 // see matrix in browser
-
 var Go = function(direction) {
   matrix = move(matrix, direction);
   draw(matrix);
