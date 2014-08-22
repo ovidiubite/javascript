@@ -1,12 +1,13 @@
 // see matrix in browser
 var Go = function(direction) {
-  matrix = move(matrix, direction);
-  draw(matrix);
+  move(matrix, direction);
 };
 
 $(document).ready(function(){
 	Go('startGame');
 	$(document).keydown(function(key){
+      
+
       switch(parseInt(key.which,10)) {
        // left Arrow
       case 37:
@@ -25,3 +26,17 @@ $(document).ready(function(){
       }
   });
 });
+
+
+var ar=new Array(37,38,39,40);
+
+// $(document).keydown(function(e) {
+//      var key = e.which;
+//       //console.log(key);
+//       //if(key==35 || key == 36 || key == 37 || key == 39)
+//       if($.inArray(key,ar) > -1) {
+//           e.preventDefault();
+//           return false;
+//       }
+//       return true;
+// });

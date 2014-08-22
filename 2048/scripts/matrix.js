@@ -56,6 +56,7 @@ var insertTile = function(matrix1){
 
 //for moves 
 var move = function(matrix1, direction){
+  matrix2 = matrix1.slice();
   resetFlag(matrix1);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
@@ -63,6 +64,7 @@ var move = function(matrix1, direction){
     // left Arrow
     case 'startGame':
       startGame();
+      position = compareElements(matrix1,matrix2);
       break;
     case 'left':
       for( var i = 0; i < MATRIX_SIZE; i++){
@@ -96,6 +98,8 @@ var move = function(matrix1, direction){
               matrix1[i][j] = new Tile(i,j,0);
             }
           }
+      matrix2 = matrix1.slice();
+      console.log('acum modific');    
       if(moved === 1)
         insertTile(matrix1);
       break;
@@ -130,8 +134,9 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
+        matrix2 = matrix1.slice();    
         if(moved === 1)
-        insertTile(matrix1);
+          insertTile(matrix1);
         break;
       case 'up':
         for(var j = 0; j < MATRIX_SIZE; j++){
@@ -164,8 +169,11 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
+        matrix2 = matrix1.slice();
         if(moved === 1)
         insertTile(matrix1);
+        console.log(matrix2);
+        console.log(matrix1);
         break;
       case 'down':
         for(var j = 0; j < MATRIX_SIZE; j++){
@@ -198,22 +206,48 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
+          matrix2 = matrix1.slice();
         if(moved === 1)
-        insertTile(matrix1);
+          insertTile(matrix1);
         break;
       };
-  return matrix1;
+  position = compareElements(matrix1,matrix2);
+  console.log(position + 'in move');
+  console.log(matrix2);
+  console.log(matrix1);
+  draw(matrix1, position);
 };
 
-var draw = function(matrix){
+var draw = function(matrix, position){
     $('.container').empty();
+    //console.log(position[0][0]);
   for(i = 0; i < MATRIX_SIZE; i++){
     for(j = 0; j < MATRIX_SIZE; j++)
-      if(matrix[i][j].value !== 0)
-        $('.container').append('<div class="tile val'+matrix[i][j].value+'">'+matrix[i][j].value+'</div>')
+      if(matrix[i][j].value !== 0){
+        if(i === position[0][0] && j === position[0][1]){
+         // console.log(position[0][1]);
+        
+        $('<div class="tile val'+matrix[i][j].value+'" style="display:none">'+matrix[i][j].value+'</div>').appendTo('.container').fadeIn(1000);
+        }else
+        $('<div class="tile val'+matrix[i][j].value+'" >'+matrix[i][j].value+'</div>').appendTo('.container');
+      }
       else
         $('.container').append('<div class="tile val'+matrix[i][j].value+'"></div>')
     $('.container').append('<br/>')
   }
 };
 
+function compareElements(matrix1, matrix2){
+
+  var position = new Array(1);
+     position[0] = new Array(2);
+  for(var i = 0; i < MATRIX_SIZE; i++)
+    for(var j = 0; j < MATRIX_SIZE; j++){
+      if(matrix1[i][j].value !== matrix2[i][j].value){
+        position[0][0] = i;
+        position[0][1] = j;
+       }}
+      console.log(position[0][0]+"in functie");
+
+      return position;
+};

@@ -23,7 +23,7 @@
 	width: 125px;
 	font: 50px arial;
 	float: left;
-	padding: 5;
+	line-height: 120px;
 	border: 2px solid #7c979b;
 	text-align: center;
 	background-color: #7c979b;
@@ -68,13 +68,22 @@
 .val1024{
 	background-color: #723d19;
 	font: 40px arial;
+	line-height: 120px;
 }
 .val2048{
 	background-color: #7c1a1a;
 	font: 40px arial;
+	line-height: 120px;
 	
 }
 .val4096{
 	background-color: #8e0505;
 	font: 40px arial;
+	line-height: 120px;
+}
+
+.val8192{
+	background-color: #ff0000;
+	font: 40px arial;
+	line-height: 120px;
 }
