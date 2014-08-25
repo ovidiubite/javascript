@@ -43,10 +43,10 @@ gameMatrix.matrix = createMatrix();
 var startGame = function(){
   var emptCell = getEmptyCell(gameMatrix.matrix);
   var x = randPosition(emptCell);
-  gameMatrix.matrix[x[0]][x[1]].value = 2;
+  gameMatrix.matrix[x[0]][x[1]].value = 1024;
   emptCell = getEmptyCell(gameMatrix.matrix);
   x = randPosition(emptCell);
-  gameMatrix.matrix[x[0]][x[1]].value = 2;
+  gameMatrix.matrix[x[0]][x[1]].value = 1024;
 };
 
 var insertTile = function(matrix){
@@ -60,6 +60,7 @@ var insertTile = function(matrix){
 var moveLeft = function(matrix){
   matrix2 = clone(matrix);
   resetFlag(matrix);
+  matrix3 = clone(matrix);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
       for( var i = 0; i < MATRIX_SIZE; i++){
@@ -99,10 +100,12 @@ var moveLeft = function(matrix){
         insertTile(matrix);
   position = compareElements(matrix,matrix2);
   draw(matrix, position);
+  win(matrix, matrix3);
 };
 
 var moveRight = function(matrix){
   matrix2 = clone(matrix);
+  matrix3 = clone(matrix);
   resetFlag(matrix);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
@@ -142,10 +145,12 @@ var moveRight = function(matrix){
 
   position = compareElements(matrix,matrix2);
   draw(matrix, position);
+  win(matrix, matrix3);
 };
 
 var moveUp = function(matrix){
   matrix2 = clone(matrix);
+  matrix3 = clone(matrix);
   resetFlag(matrix);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
@@ -184,10 +189,13 @@ var moveUp = function(matrix){
   insertTile(matrix);
   position = compareElements(matrix,matrix2);
   draw(matrix, position);
+  win(matrix, matrix3);
+
 };
 
 var moveDown = function(matrix){
   matrix2 = clone(matrix);
+  matrix3 = clone(matrix);
   resetFlag(matrix);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
@@ -226,7 +234,8 @@ var moveDown = function(matrix){
   insertTile(matrix);
   position = compareElements(matrix,matrix2);
   draw(matrix, position);
-};
+  win(matrix, matrix3);
+ };
 
 var draw = function(matrix, position){
   container.empty();
@@ -261,3 +270,6 @@ function compareElements(matrix, matrix2){
        }}
       return position;
 };
+
+
+
