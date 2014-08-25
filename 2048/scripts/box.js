@@ -1,42 +1,27 @@
-// see matrix in browser
-var Go = function(direction) {
-  move(matrix, direction);
-};
-
 $(document).ready(function(){
-	Go('startGame');
+	startGame();
+  draw(gameMatrix.matrix);
 	$(document).keydown(function(key){
-      
-
-      switch(parseInt(key.which,10)) {
+    switch(parseInt(key.which,10)) {
        // left Arrow
       case 37:
-        Go('left');
+        stopScroll();
+        moveLeft(gameMatrix.matrix);
         break;
       case 38:
-        Go('up');
+        stopScroll();
+        moveUp(gameMatrix.matrix);
         break;
       case 39:
-      	Go('right');
-      	break;
-      case 40:
-        Go('down');
+        stopScroll();
+       	moveRight(gameMatrix.matrix);
         break;
-
+      case 40:
+        stopScroll();
+        moveDown(gameMatrix.matrix);
+        break;
+  
       }
+
   });
 });
-
-
-var ar=new Array(37,38,39,40);
-
-// $(document).keydown(function(e) {
-//      var key = e.which;
-//       //console.log(key);
-//       //if(key==35 || key == 36 || key == 37 || key == 39)
-//       if($.inArray(key,ar) > -1) {
-//           e.preventDefault();
-//           return false;
-//       }
-//       return true;
-// });
