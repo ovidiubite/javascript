@@ -56,7 +56,7 @@ var insertTile = function(matrix1){
 
 //for moves 
 var move = function(matrix1, direction){
-  matrix2 = matrix1.slice();
+  matrix2 = clone(matrix1);
   resetFlag(matrix1);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
@@ -98,7 +98,7 @@ var move = function(matrix1, direction){
               matrix1[i][j] = new Tile(i,j,0);
             }
           }
-      matrix2 = matrix1.slice();
+      matrix2 = clone(matrix1);
       console.log('acum modific');    
       if(moved === 1)
         insertTile(matrix1);
@@ -134,7 +134,7 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
-        matrix2 = matrix1.slice();    
+         matrix2 = clone(matrix1); 
         if(moved === 1)
           insertTile(matrix1);
         break;
@@ -169,7 +169,7 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
-        matrix2 = matrix1.slice();
+        matrix2 = clone(matrix1);
         if(moved === 1)
         insertTile(matrix1);
         console.log(matrix2);
@@ -206,7 +206,7 @@ var move = function(matrix1, direction){
                 matrix1[i][j] = new Tile(i,j,0);
               }
             }
-          matrix2 = matrix1.slice();
+          matrix2 = clone(matrix1);
         if(moved === 1)
           insertTile(matrix1);
         break;
@@ -251,3 +251,16 @@ function compareElements(matrix1, matrix2){
 
       return position;
 };
+
+function clone(existingArray) {
+   var newObj = (existingArray instanceof Array) ? [] : {};
+   for (i in existingArray) {
+      if (i == 'clone') continue;
+      if (existingArray[i] && typeof existingArray[i] == "object") {
+         newObj[i] = clone(existingArray[i]);
+      } else {
+         newObj[i] = existingArray[i]
+      }
+   }
+   return newObj;
+}
