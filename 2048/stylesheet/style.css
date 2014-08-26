@@ -1,10 +1,14 @@
+html {
+	height: 100%;
+}
+body{
+	background-color: #ebebeb;
+	height: 100%;
+}
 .screen{
   background-color: #ebebeb;
-  height: 950px;
+  height: 100%;
   width: 100%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-
 }
 #restartGame{
   border: 2px solid #D6D59C;
@@ -30,20 +34,16 @@
   margin-top: 160px;
   background-color: #D6D59C; 
 }
-}
-
-.default.container{
+.container{
   border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -274px;
-  margin-left: -254px;
-  background-color: #577a7f;
-  border: 8px solid #577a7f;
+  margin-top: -282px;
+  margin-left: -282px;
+  color: #fff;
 }
-
-.default .tile{
+.tile{
   border-radius: 8px;
   margin: 4px;
   height: 125px;
@@ -51,46 +51,43 @@
   font: 50px arial;
   float: left;
   line-height: 120px;
-  border: 2px solid #7c979b;
   text-align: center;
+}
+/*default template*/
+.default.container{
+  background-color: #56D7B8;
+  border: 8px solid #56D7B8;
+}
+.default .tile{
+  border: 2px solid #7c979b;
   background-color: #7c979b;
 }
-
 .default .val2{
   background-color: #528c93;
-
 }
 .default .val4{
   background-color: #4d7a89;
-  
 }
 .default .val8{
   background-color: #337c74;
-  
 }
 .default .val16{
   background-color: #337c55;
-  
 }
 .default .val32{
   background-color: #1b633d;
-  
 }
-
 .default .val64{
   background-color: #197228;
-  
 }
 .default .val128{
   background-color: #3e7219;
-  }
+}
 .default .val256{
   background-color: #6b7219;
-  
 }
 .default .val512{
   background-color: #725a19;
-  
 }
 .default .val1024{
   background-color: #723d19;
@@ -101,44 +98,26 @@
   background-color: #7c1a1a;
   font: 40px arial;
   line-height: 120px;
-  
 }
 .default .val4096{
   background-color: #8e0505;
   font: 40px arial;
   line-height: 120px;
 }
-
 .default .val8192{
   background-color: #ff0000;
   font: 40px arial;
   line-height: 120px;
 }
-/*new template*/
+/*rainbow template*/
 .rainbow.container{
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -274px;
-  margin-left: -254px;
   background-color: #56D7B8;
   border: 8px solid #56D7B8;
 }
-
 .rainbow .tile{
-  border-radius: 8px;
-  margin: 4px;
-  height: 125px;
-  width: 125px;
-  font: 50px arial;
-  float: left;
-  line-height: 120px;
   border: 2px solid #7c979b;
-  text-align: center;
   background-color: #7c979b;
 }
-
 .rainbow .val2{
   background-color: #69D2E7;
 
@@ -157,9 +136,7 @@
 }
 .rainbow .val32{
   background-color: #FA6900;
-  
 }
-
 .rainbow .val64{
   background-color: #E23D26;
   
@@ -191,39 +168,20 @@
   font: 40px arial;
   line-height: 120px;
 }
-
 .rainbow .val8192{
   background-color: #757A64;
   font: 40px arial;
   line-height: 120px;
 }
-
-
-/*new template*/
+/*warm template*/
 .warm.container{
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -274px;
-  margin-left: -254px;
   background-color: #4C5F49;
   border: 8px solid #4C5F49;
 }
-
 .warm .tile{
-  border-radius: 8px;
-  margin: 4px;
-  height: 125px;
-  width: 125px;
-  font: 50px arial;
-  float: left;
-  line-height: 120px;
   border: 2px solid #81AC7F;
-  text-align: center;
   background-color: #81AC7F;
 }
-
 .warm .val2{
   background-color: #6F6F6F;
 
@@ -243,12 +201,9 @@
 .warm .val32{
   background-color: #130409;
   color:white;
-  
 }
-
 .warm .val64{
   background-color: #183629;
-  
 }
 .warm .val128{
   background-color: #6B9581;
@@ -277,7 +232,6 @@
   font: 40px arial;
   line-height: 120px;
 }
-
 .warm .val8192{
   background-color: #BC02FF;
   font: 40px arial;
