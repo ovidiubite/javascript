@@ -61,6 +61,7 @@ var moveLeft = function(matrix){
   matrix2 = clone(matrix);
   resetFlag(matrix);
   matrix3 = clone(matrix);
+  undoMatrix.push(matrix2);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
       for( var i = 0; i < MATRIX_SIZE; i++){
@@ -107,6 +108,7 @@ var moveRight = function(matrix){
   matrix2 = clone(matrix);
   matrix3 = clone(matrix);
   resetFlag(matrix);
+  undoMatrix.push(matrix2);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for( var i = 0; i < MATRIX_SIZE; i++){
@@ -152,6 +154,9 @@ var moveUp = function(matrix){
   matrix2 = clone(matrix);
   matrix3 = clone(matrix);
   resetFlag(matrix);
+  console.log(undoMatrix);
+  undoMatrix.push(matrix2);
+  console.log(undoMatrix);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for(var j = 0; j < MATRIX_SIZE; j++){
@@ -197,6 +202,7 @@ var moveDown = function(matrix){
   matrix2 = clone(matrix);
   matrix3 = clone(matrix);
   resetFlag(matrix);
+  undoMatrix.push(matrix2);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for(var j = 0; j < MATRIX_SIZE; j++){
@@ -271,5 +277,8 @@ function compareElements(matrix, matrix2){
       return position;
 };
 
-
-
+function undo(){
+ var matrix = undoMatrix[undoMatrix.length-1];
+ undoMatrix.length = undoMatrix.length-1;
+ return matrix;
+};
