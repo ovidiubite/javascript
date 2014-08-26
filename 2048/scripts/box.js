@@ -2,19 +2,20 @@ $(document).ready(function(){
 	startGame();
   draw(gameMatrix.matrix);
   var undoMatrix = clone(gameMatrix.matrix);
-    $('#undo').html('Undo ('+x+')');
-
+    undoTag.html('Undo ('+x+')');
    $('#restartGame').click(function(){
     gameMatrix.matrix = restartGame();
     startGame();
     draw(gameMatrix.matrix);
+    x = 3;
+    undoTag.html('Undo ('+x+')');
    }); 
    $('#undo').click(function(){
     if(x>0){
       gameMatrix.matrix = undo();
       draw(gameMatrix.matrix);
       x--;
-    $('#undo').html('Undo ('+x+')');
+      undoTag.html('Undo ('+x+')');
     }
   }); 
 
