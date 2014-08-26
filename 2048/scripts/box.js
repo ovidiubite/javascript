@@ -9,6 +9,7 @@ $(document).ready(function(){
     draw(gameMatrix.matrix);
     x = 3;
     undoTag.html('Undo ('+x+')');
+    undoMatrix = new Array();
    }); 
    $('#undo').click(function(){
     if(x>0){

@@ -62,12 +62,14 @@ var moveLeft = function(matrix){
   resetFlag(matrix);
   matrix3 = clone(matrix);
   undoMatrix.push(matrix2);
+  undoScore.push(totalScore);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
       for( var i = 0; i < MATRIX_SIZE; i++){
         for( var j = MATRIX_SIZE-1; j > 0; j--){
           if(matrix[i][j].value !== 0){           
             if(matrix[i][j].value === matrix[i][j-1].value && matrix[i][j].flag === 0 && matrix[i][j-1].flag === 0){
+              score(matrix[i][j-1].value*2);
               matrix[i][j-1].value = matrix[i][j-1].value*2;
               matrix[i][j].value = 0;
               matrix[i][j-1].flag = 1;
@@ -109,12 +111,14 @@ var moveRight = function(matrix){
   matrix3 = clone(matrix);
   resetFlag(matrix);
   undoMatrix.push(matrix2);
+  undoScore.push(totalScore);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for( var i = 0; i < MATRIX_SIZE; i++){
     for( var j = 0; j < MATRIX_SIZE-1; j++){
       if(matrix[i][j].value !== 0){           
         if(matrix[i][j].value === matrix[i][j+1].value && matrix[i][j].flag === 0 && matrix[i][j+1].flag === 0){
+          score(matrix[i][j+1].value*2);
           matrix[i][j+1].value = matrix[i][j+1].value*2;
           matrix[i][j].value = 0;
           matrix[i][j+1].flag = 1;
@@ -154,15 +158,15 @@ var moveUp = function(matrix){
   matrix2 = clone(matrix);
   matrix3 = clone(matrix);
   resetFlag(matrix);
-  console.log(undoMatrix);
   undoMatrix.push(matrix2);
-  console.log(undoMatrix);
+  undoScore.push(totalScore);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for(var j = 0; j < MATRIX_SIZE; j++){
     for(var i = MATRIX_SIZE-1; i > 0; i--){
       if(matrix[i][j].value !== 0){ 
         if(matrix[i][j].value === matrix[i-1][j].value && matrix[i][j].flag === 0 && matrix[i-1][j].flag === 0){
+          score(matrix[i-1][j].value*2);
           matrix[i-1][j].value = matrix[i-1][j].value*2;
           matrix[i][j].value = 0;
           matrix[i-1][j].flag = 1;
@@ -203,12 +207,14 @@ var moveDown = function(matrix){
   matrix3 = clone(matrix);
   resetFlag(matrix);
   undoMatrix.push(matrix2);
+  undoScore.push(totalScore);
   // if moved = 0, then don't insert new tile;    
   var moved = 0;
   for(var j = 0; j < MATRIX_SIZE; j++){
     for(var i = 0; i < MATRIX_SIZE-1; i++){
       if(matrix[i][j].value !== 0){ 
         if(matrix[i][j].value === matrix[i+1][j].value && matrix[i][j].flag === 0 && matrix[i+1][j].flag === 0){
+          score(matrix[i+1][j].value*2);
           matrix[i+1][j].value = matrix[i+1][j].value*2;
           matrix[i][j].value = 0;
           matrix[i+1][j].flag = 1;
@@ -256,6 +262,8 @@ var draw = function(matrix, position){
       else
        addHtml(matrix[i][j], 'block').appendTo(container);
     container.append('<br/>')
+    $('.screen').append('<div id="score">' +totalScore+ '</div>');
+    console.log(totalScore);
   }
 };
 
@@ -280,5 +288,7 @@ function compareElements(matrix, matrix2){
 function undo(){
  var matrix = undoMatrix[undoMatrix.length-1];
  undoMatrix.length = undoMatrix.length-1;
+ totalScore = undoScore[undoScore.length-1];
+ undoScore.length = undoScore.length-1;
  return matrix;
 };

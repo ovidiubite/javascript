@@ -41,7 +41,7 @@ function gameOver(matrix){
       else
         k = 1;
     else
-      if(matrix[i][j].value !== matrix[i][j+1].value)
+      if(matrix[i][j].value !== matrix[i+1][j].value)
        continue;
       else
         k = 1;
@@ -76,4 +76,10 @@ function win(matrix, matrix3){
   if(k1 === 1 && k2 == 0)
     alert('You Win');
 
+}
+
+
+function score(score){
+  totalScore += score;
+  return totalScore;
 }
