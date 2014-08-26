@@ -9,7 +9,7 @@ $(document).ready(function(){
     draw(gameMatrix.matrix);
     x = 3;
     totalScore = 0;
-    $('.screen').append('<div id="score">' +totalScore+ '</div>');
+    $('.score').html('Score' + '<p>'+totalScore+'</p>');
     undoTag.html('Undo ('+x+')');
     undoMatrix = new Array();
    }); 

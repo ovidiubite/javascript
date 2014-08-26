@@ -5,6 +5,14 @@ body{
 	background-color: #ebebeb;
 	height: 100%;
 }
+#title{
+  position: absolute;
+  top: 1.5%;
+  left: 40.5%;
+  font-size: 80px;
+  color: #f28f00;
+  font-family: "Lucida Console", "Bitstream Vera Sans Mono";
+}
 .screen{
   background-color: #ebebeb;
   height: 100%;
@@ -16,7 +24,7 @@ body{
   height: 50px;
   width: 130px;
   position: absolute;
-  top: 68%;
+  top: 58%;
   left: 58%;
   margin-left: 7px;
   margin-top: 160px;
@@ -28,31 +36,32 @@ body{
   height: 50px;
   width: 130px;
   position: absolute;
-  top: 68%;
+  top: 58%;
   left: 35%;
   margin-left: 7px;
   margin-top: 160px;
   background-color: #D6D59C; 
 }
-#score{
+.score{
   border: 2px solid #D6D59C;
   border-radius: 3px;
-  height: 50px;
   width: 130px;
   position: absolute;
-  top: 15%;
-  left: 50%;
-  margin-left: 7px;
-  background-color: #56D7B8;
+  top: 1%;
+  left: 57.5%;
+  background-color: #D6D59C;
   color:white;
   text-align: center;
   font-size: 30px;
   line-height: 40px;
 }
+.score p{
+  font-size: 20px;
+}
 .container{
   border-radius: 10px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin-top: -282px;
   margin-left: -282px;
@@ -251,4 +260,14 @@ body{
   background-color: #BC02FF;
   font: 40px arial;
   line-height: 120px;
+}
+
+#info{
+  position: absolute;
+  top: 85%;
+  left: 29%;
+  right: 28%;
+  padding-left: 110px;
+  padding-right: 110px;
+ 
 }
