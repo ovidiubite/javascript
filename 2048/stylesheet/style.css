@@ -1,7 +1,10 @@
 .screen{
   background-color: #ebebeb;
   height: 950px;
-  margin: 20px 400px 20px 400px;*/
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
 }
 
 
@@ -87,7 +90,7 @@
   font: 40px arial;
   line-height: 120px;
 }
-/*new scheme*/
+/*new template*/
 .rainbow.container{
   border-radius: 10px;
   position: absolute;
@@ -172,3 +175,87 @@
 }
 
 
+/*new template*/
+.warm.container{
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -274px;
+  margin-left: -254px;
+  background-color: #4C5F49;
+  border: 8px solid #4C5F49;
+}
+
+.warm .tile{
+  border-radius: 8px;
+  margin: 4px;
+  height: 125px;
+  width: 125px;
+  font: 50px arial;
+  float: left;
+  line-height: 120px;
+  border: 2px solid #81AC7F;
+  text-align: center;
+  background-color: #81AC7F;
+}
+
+.warm .val2{
+  background-color: #6F6F6F;
+
+}
+.warm .val4{
+  background-color: #544856;
+  
+}
+.warm .val8{
+  background-color: #4F3153;
+  
+}
+.warm .val16{
+  background-color: #31313D;
+  
+}
+.warm .val32{
+  background-color: #130409;
+  color:white;
+  
+}
+
+.warm .val64{
+  background-color: #183629;
+  
+}
+.warm .val128{
+  background-color: #6B9581;
+  }
+.warm .val256{
+  background-color: #97A78C;
+  
+}
+.warm .val512{
+  background-color: #9AA944;
+  
+}
+.warm .val1024{
+  background-color: #EDB429;
+  font: 40px arial;
+  line-height: 120px;
+}
+.warm .val2048{
+  background-color: #F8AFA6;
+  font: 40px arial;
+  line-height: 120px;
+  
+}
+.warm .val4096{
+  background-color: #54FA00;
+  font: 40px arial;
+  line-height: 120px;
+}
+
+.warm .val8192{
+  background-color: #BC02FF;
+  font: 40px arial;
+  line-height: 120px;
+}
