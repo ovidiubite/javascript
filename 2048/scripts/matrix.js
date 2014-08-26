@@ -43,10 +43,10 @@ gameMatrix.matrix = createMatrix();
 var startGame = function(){
   var emptCell = getEmptyCell(gameMatrix.matrix);
   var x = randPosition(emptCell);
-  gameMatrix.matrix[x[0]][x[1]].value = 1024;
+  gameMatrix.matrix[x[0]][x[1]].value = 2;
   emptCell = getEmptyCell(gameMatrix.matrix);
   x = randPosition(emptCell);
-  gameMatrix.matrix[x[0]][x[1]].value = 1024;
+  gameMatrix.matrix[x[0]][x[1]].value = 2;
 };
 
 var insertTile = function(matrix){

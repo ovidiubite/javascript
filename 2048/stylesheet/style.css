@@ -6,7 +6,31 @@
   margin-top: 20px;
 
 }
-
+#restartGame{
+  border: 2px solid #D6D59C;
+  border-radius: 3px;
+  height: 50px;
+  width: 130px;
+  position: absolute;
+  top: 68%;
+  left: 59%;
+  margin-left: 7px;
+  margin-top: 160px;
+  background-color: #D6D59C; 
+}
+#undo{
+  border: 2px solid #D6D59C;
+  border-radius: 3px;
+  height: 50px;
+  width: 130px;
+  position: absolute;
+  top: 68%;
+  left: 36%;
+  margin-left: 7px;
+  margin-top: 160px;
+  background-color: #D6D59C; 
+}
+}
 
 .default.container{
   border-radius: 10px;

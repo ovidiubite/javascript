@@ -1,7 +1,11 @@
 $(document).ready(function(){
 	startGame();
   draw(gameMatrix.matrix);
-     
+   $('#restartGame').click(function(){
+    gameMatrix.matrix = restartGame();
+    startGame();
+    draw(gameMatrix.matrix);
+   }); 
 
   	$(document).keydown(function(key){
     switch(parseInt(key.which,10)) {
