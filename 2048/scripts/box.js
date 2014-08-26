@@ -8,6 +8,8 @@ $(document).ready(function(){
     startGame();
     draw(gameMatrix.matrix);
     x = 3;
+    totalScore = 0;
+    $('.screen').append('<div id="score">' +totalScore+ '</div>');
     undoTag.html('Undo ('+x+')');
     undoMatrix = new Array();
    }); 
