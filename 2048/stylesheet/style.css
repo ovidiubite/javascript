@@ -271,3 +271,12 @@ body{
   padding-right: 110px;
  
 }
+
+.game, .gameOver{
+  position: absolute;
+  background: rgba(238, 228, 218, 0.73);
+  z-index: 100;
+  text-align: center;
+  font-size: 40px;
+  color: #f28f00;
+}

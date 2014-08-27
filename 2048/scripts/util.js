@@ -39,10 +39,8 @@ function gameOver(matrix){
        continue;
       else
         k = 1;
- 
-
-  if(k === 0 && getEmptyCell(matrix).length === 0){
-    alert('GameOver! You lose! \n Press ESC for restart the game!');
+   if(k === 0 && getEmptyCell(matrix).length === 0){
+    $('<div class="game" style="display:none">'+"GameOver!"+'<p>'+"You lose! Press ESC to restart the game!"+'</p>'+'</div>').appendTo(container).fadeIn(1500);
     return k;
   }
 };
@@ -68,9 +66,9 @@ function win(matrix, matrix3){
     }
   }
 
-  if(k1 === 1 && k2 == 0)
-    alert('You Win');
-
+  if(k1 === 1 && k2 == 0){
+    $('<div class="game" style="display:none">'+"Congratulations!"+'<p>'+"You can continue the game or press esc to restart the game!"+'</p>'+'</div>').appendTo(container).fadeIn(1500);
+    }
 }
 
 

@@ -4,6 +4,3 @@ function Tile(x,y, value){
   this.value = value;
   this.flag = 0;
 };
-
-
-
